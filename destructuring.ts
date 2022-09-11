@@ -56,17 +56,37 @@ type Car = { make: string; model: string; year: number };
 const myCar: Car = { make: "Honda", model: "Accord", year: 1990 };
 
 //No destructuring
-const displayCar = (car: Car) => console.log(`${car.make} ${car.model}`);
+function displayCar(car: Car) {
+  return console.log(`${car.make} ${car.model}`);
+}
 displayCar(myCar); // Honda Accord
 
-//Destructuring function arguments
+//Unpacking properties from objects passed as a function parameter
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 //Note: About { make, model }: { make: string; model: string }, see
-//https://bobbyhadz.com/blog/typescript-binding-element-implicitly-has-an-any-type#:~:text=The%20error%20%22Binding%20element%20implicitly,in%20functions%20and%20class%20methods.
-const displayCar2 = ({ make, model }: { make: string; model: string }) =>
-  console.log(`${make} ${model}`);
+//https://bobbyhadz.com/blog/typescript-binding-element-implicitly-has-an-any-type
+function displayCar2({ make, model }: { make: string; model: string }) {
+  return console.log(`${make} ${model}`);
+}
 displayCar2(myCar);
 
-//Parameter destructuring
+const user = {
+  id: 42,
+  displayName: "jdoe",
+  fullName: {
+    firstName: "John",
+    lastName: "Doe",
+  },
+};
+
+//Note the {id} object passed in as parameter has to be typed - because of noImplicitAny set to true in tsconfig
+function userId({ id }: { id: number }) {
+  return id;
+}
+
+console.log(userId(user)); //42
+
+//Parameter destructuring - TS handbook
 type ABC = { a: number; b: number; c: number };
 function sum({ a, b, c }: ABC) {
   console.log(a + b + c);
