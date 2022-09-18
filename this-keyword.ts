@@ -6,6 +6,7 @@ let person = {
     console.log(`${this.firstName}  ${this.lastName}`);
   },
   //Following does not work because arrow functions don't provide their own `this` binding
+  //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this#arrow_functions
   //   fullName2: () => {
   //     console.log(`${this.firstName}  ${this.lastName}`);
   //   },
@@ -25,6 +26,7 @@ let obj = {
 };
 obj.foo(); //"a-value"
 
+//Binding
 let car = {
   name: "Mazda",
   getName: function () {

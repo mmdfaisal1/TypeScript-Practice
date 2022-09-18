@@ -93,3 +93,5 @@ function sum({ a, b, c }: ABC) {
 }
 
 sum({ a: 10, b: 5, c: 8 });
+
+export {};
