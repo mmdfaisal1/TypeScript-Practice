@@ -23,6 +23,7 @@ function Vehicle(this: any, make: string, model: string, color: string) {
 const car1 = new (Vehicle as any)("Honda", "Accord", "White");
 console.log(car1.make); //"Honda"
 
+//The above is essentially the same as class, which is a syntatic sugar over function
 class VehicleDetails {
   make: string;
   model: string;
