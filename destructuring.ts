@@ -45,11 +45,11 @@ let employee = {
 
 let {
   id,
-  employeeName: { firstNameEmployee, lastNameEmployee },
+  employeeName: { firstNameEmployee },
 } = employee;
 
 console.log(firstNameEmployee); // John
-//console.log(typeof employeeName);
+//console.log(firstNameEmployee);
 
 //Destructuring function arguments
 type Car = { make: string; model: string; year: number };
