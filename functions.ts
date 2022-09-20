@@ -11,6 +11,7 @@ console.log(`The sum of ${myNum1} and ${myNum2} is`, addtwo(myNum1, myNum2));
 
 let myAddTwo = addtwo;
 
+//Classes are functions under the hood
 function Vehicle(this: any, make: string, model: string, color: string) {
   (this.make = make),
     (this.model = model),
@@ -36,3 +37,11 @@ class VehicleDetails {
 }
 
 const car2 = new VehicleDetails("Dodge", "Charger", "Black");
+
+//We can add a property to the prototype of Vehicle
+//So it is available to every instance of it
+Vehicle.prototype.getColor = function () {
+  return this.color;
+};
+
+console.log(car1.getColor()); //White
