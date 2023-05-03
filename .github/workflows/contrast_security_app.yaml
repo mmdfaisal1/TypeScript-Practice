@@ -32,6 +32,7 @@ jobs:
     outputs:
       fingerprint: ${{ steps.fingerprint.outputs.fingerprint }}
   analyze_dependencies:
+    if: ${{ needs.fingerprint_repo.outputs.fingerprint != '' }}
     needs: fingerprint_repo
     runs-on: ubuntu-22.04
     strategy:
