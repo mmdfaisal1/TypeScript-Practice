@@ -13,6 +13,8 @@
     "lite-server": "^2.6.1"
   },
   "dependencies": {
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "@types/node": "20.8.6",
+    "typescript": "5.2.2"
   }
 }
